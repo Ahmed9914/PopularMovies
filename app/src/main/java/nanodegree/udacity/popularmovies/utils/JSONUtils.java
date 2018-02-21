@@ -50,27 +50,22 @@ public class JSONUtils {
                     // Title
                     if (currentMovieJSON.has(JSON_TITLE_KEY)) {
                         currentMovie.setTitle(currentMovieJSON.optString(JSON_TITLE_KEY));
-                        Log.v(TAG,"Title is:" + currentMovieJSON.optString(JSON_TITLE_KEY));
                     }
                     // ReleaseDate
                     if (currentMovieJSON.has(JSON_RELEASE_DATE_KEY)) {
                         currentMovie.setReleaseDate(currentMovieJSON.optString(JSON_RELEASE_DATE_KEY));
-                        Log.v(TAG,"ReleaseDate is:" + currentMovieJSON.optString(JSON_RELEASE_DATE_KEY));
                     }
                     // PosterLink
                     if (currentMovieJSON.has(JSON_POSTER_LINK_KEY)) {
                         currentMovie.setPosterLink(FULL_IMAGE_URL + currentMovieJSON.optString(JSON_POSTER_LINK_KEY));
-                        Log.v(TAG,"PosterLink is:" + currentMovieJSON.optString(JSON_POSTER_LINK_KEY));
                     }
                     // VoteAverage
                     if (currentMovieJSON.has(JSON_VOTES_KEY)) {
                         currentMovie.setVoteAverage(currentMovieJSON.getDouble(JSON_VOTES_KEY));
-                        Log.v(TAG,"VoteAverage is:" + currentMovieJSON.getDouble(JSON_VOTES_KEY));
                     }
                     // Overview
                     if (currentMovieJSON.has(JSON_OVERVIEW_KEY)) {
                         currentMovie.setOverview(currentMovieJSON.optString(JSON_OVERVIEW_KEY));
-                        Log.v(TAG,"Overview is:" + currentMovieJSON.optString(JSON_OVERVIEW_KEY));
                     }
                     movies.add(currentMovie);
                 }
@@ -83,6 +78,5 @@ public class JSONUtils {
         }
         return movies;
     }
-
 
 }
