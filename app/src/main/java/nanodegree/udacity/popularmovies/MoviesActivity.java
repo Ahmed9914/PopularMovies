@@ -27,8 +27,7 @@ import nanodegree.udacity.popularmovies.utils.NetworkUtils;
 
 public class MoviesActivity extends AppCompatActivity implements MoviesAdapter.MovieAdapterOnClickHandler
         ,LoaderManager.LoaderCallbacks<List<Movie>> {
-//TODO 1. add menu to toggle the sort order of the movies by: most popular, highest rated.
-
+        
     private static final String TAG = MoviesActivity.class.getSimpleName();
     private static final int numberOfItemsPerRow = 2;
     private static final int MOVIE_LOADER_ID = 0;
@@ -40,7 +39,7 @@ public class MoviesActivity extends AppCompatActivity implements MoviesAdapter.M
     private TextView errorMessageDisplay;
     private ProgressBar loadingIndicator;
 
-    // Default sorting is by popular movies
+    // Default sorting is by top rated movies
     private String sortingCategory = NetworkUtils.TOP_RATED_QUERY;
 
     @Override
@@ -80,7 +79,6 @@ public class MoviesActivity extends AppCompatActivity implements MoviesAdapter.M
 
             @Override
             public List<Movie> loadInBackground() {
-                // TODO check what will be shown according to filtering
                 URL requestUrl = NetworkUtils.buildUrl(sortingCategory);
 
                 try {
@@ -164,7 +162,7 @@ public class MoviesActivity extends AppCompatActivity implements MoviesAdapter.M
 
     @Override
     public void onClick(Movie movie) {
-        Log.d(TAG, "clicked on "+movie.getTitle());
+        //Log.d(TAG, "clicked on "+movie.getTitle());
         Intent intentToStartDetailsActivity = new Intent(this, MovieDetails.class);
         intentToStartDetailsActivity.putExtra(MOVIE_DETAILS_KEY, movie);
         startActivity(intentToStartDetailsActivity);
