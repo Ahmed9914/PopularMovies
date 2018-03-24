@@ -1,2 +1,2 @@
 # PopularMovies
-The first version of popular movies app.
+The final version of popular movies app for udacity nanodegree submission.
