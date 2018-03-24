@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Popular Movies</string>
     <string name="error_msg">An error has occurred. Please make sure you have internet access</string>
+    <string name="added_to_favorites_text">Remove from favorites</string>
+    <string name="add_to_favorites_text">Add to favorites</string>
 </resources>

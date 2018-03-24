@@ -8,15 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/MyTheme">
-        <activity android:name=".MoviesActivity">
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MoviesActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MovieDetails"></activity>
+        <activity android:name=".MovieDetails"
+        android:parentActivityName=".MoviesActivity"></activity>
+        <provider
+            android:authorities="nanodegree.udacity.popularmovies"
+            android:name=".data.FavoritesProvider"
+            android:exported="false"/>
     </application>
 
 </manifest>

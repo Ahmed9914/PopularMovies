@@ -1,4 +1,4 @@
-package nanodegree.udacity.popularmovies;
+package nanodegree.udacity.popularmovies.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import nanodegree.udacity.popularmovies.R;
 import nanodegree.udacity.popularmovies.model.Movie;
 
 /**
@@ -66,14 +67,18 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesAdap
         public MoviesAdapterViewHolder(View itemView) {
             super(itemView);
             posterImageView = itemView.findViewById(R.id.logo_iv);
-            itemView.setOnClickListener(this);
+            if (clickHandler!=null) {
+                itemView.setOnClickListener(this);
+            }
         }
 
         @Override
         public void onClick(View view) {
             int adapterPosition = getAdapterPosition();
             Movie currentMovie = movies.get(adapterPosition);
-            clickHandler.onClick(currentMovie);
+            if (clickHandler!=null) {
+                clickHandler.onClick(currentMovie);
+            }
         }
     }
 }
